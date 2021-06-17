@@ -50,6 +50,100 @@ return pb;
 return pb;		
 	
 }
+	public static void pendu (int n)
+{
+		String [] T = new String[10];
+		
+		String str="";
+		switch (n)
+		{
+		case 6:
+			T[1]="  ______  \n";
+			T[2]="	|     |   \n";
+			T[3]="	|       \n";
+			T[4]="	|       \n";
+			T[5]="	|       \n";
+			T[6]="	|       \n";
+			T[7]="	|       \n";
+			T[8]="	|       \n";
+			T[9]="	|__________\n";
+			
+			break;
+			case 5:
+			T[1]="          \n";
+			T[2]=" ______    \n";
+			T[3]="|     O   \n";
+			T[4]="|         \n";
+			T[5]="|         \n"; 
+			T[6]="|         \n";
+			T[7]="|         \n";
+			T[8]="|         \n";
+			T[9]="|__________\n";
+			break;
+			case 4:
+			T[1]="          \n";
+			T[2]=" ______    \n";
+			T[3]="|     O   \n";
+			T[4]="|   |_ _|  \n";
+			T[5]="|         \n";
+			T[6]="|          \n";
+			T[7]="|          \n";
+			T[8]="|           \n";
+			T[9]="|__________\n";
+			break;
+			case 3:
+				T[1]="          \n";
+				T[2]=" ______    \n";
+				T[3]="|     O   \n";
+				T[4]="|   |_ _|  \n";
+				T[5]="|     |    \n";
+				T[6]="|     |  \n";
+				T[7]="|         \n";
+				T[8]="|         \n";
+				T[9]="|__________\n";
+				break;
+			case 2:
+				T[1]="          \n";
+				T[2]=" ______     \n";
+				T[3]="|     O   \n";
+				T[4]="|   |_ _|  \n";
+				T[5]="|     |    \n";
+				T[6]="|    _|_  \n";
+				T[7]="|   /   |  \n";
+				T[8]="|          \n";
+				T[9]="|__________\n";
+				break;
+			case 1:
+				T[1]="          \n";
+				T[2]= "______   \n";
+				T[3]="|     O   \n";
+				T[4]="|   |_ _|  \n";
+				T[5]="|     |    \n";
+				T[6]="|    _|_  \n";
+				T[7]="|   /   |  \n";
+				T[8]="|  /	  |  \n";
+				T[9]="|__________\n";
+				break;
+			case 0:
+				T[1]=" ______   \n";
+				T[2]="|     |     \n";
+				T[3]="|     O   \n";
+				T[4]="|   |_ _|  \n";
+				T[5]="|     |    \n";
+				T[6]="|    _|_  \n";
+				T[7]="|   /   |  \n";
+				T[8]="|  /    |  \n";
+				T[9]="|__________\n";
+			
+		     break;			}
+
+	
+
+for(int i=1; i<=9;i++)
+{	System.out.print(T[i]);
+}
+		}
+		
 	
 		
 	public static void main(String[] args) 
@@ -91,8 +185,7 @@ return pb;
 			{
 				motcache=motcache+'-';
 			}
-			
-		motcache=motcache+motmystere.charAt(motmystere.length()-1);
+				motcache=motcache+motmystere.charAt(motmystere.length()-1);
 	
 		for ( i = 0; i <motcache.length(); i++)
 		{
@@ -108,8 +201,9 @@ return pb;
 		
 		boolean trouvemot=false;
 		boolean trouvelettre=false;
-						
-			
+		int cpttiret=0;				
+		int cpttrouve=0;
+		
 		/*	Début du test  */
 		do
 		{
@@ -132,58 +226,72 @@ return pb;
 					
 				}while (pb);
 			
+			/*Test de l'existence de la lettre saisie*/
+				
+			lettremaj=Character.toUpperCase(lettrechoisie.charAt(0));
 			
-			trouvemot=true;
 			trouvelettre=false;
-			for(i=1; i<(motmystere.length())-1;i++)
-				{
-					lettremaj=Character.toUpperCase(lettrechoisie.charAt(0));
-
-					if(motmystere.charAt(i)==lettremaj)
-					{	trouvelettre=true;
-						
-						motcache=motcache.substring(0,i) + lettremaj + motcache.substring(i+1);
-						
-					
-						
-						for ( int j = 0; j <motcache.length(); j++)
-			  			{
-						
-						System.out.print(motcache.charAt(j)+" " );
-						
-			  			}
-					}
-					
-					  else {
-						  trouvemot=true; 
-						  	if(motcache.charAt(i)=='-') 
-						  		{ 
-						  		
-						  		trouvemot=false; 
-						  		}
-					  		}
-				}
-			if(trouvelettre==false)
+			trouvemot=false;
+			cpttrouve=0;
+			cpttiret=0;
+			
+			for(i=1; i<motmystere.length()-1;i++)		
 			{
-				nbcoup--;
-				for ( int j = 0; j <motcache.length(); j++)
-				{
+			
+				if(motmystere.charAt(i)==lettremaj)
+					{
+						//trouvelettre=true;
+						//cpttrouve++;
+										
+						if(motcache.charAt(i)=='-')
+							{cpttrouve++;
+							
+							motcache=motcache.substring(0,i) + lettremaj + motcache.substring(i+1);
+							
+							}
+					}
+				else {
+						if (motcache.charAt(i)=='-')	
+							{	
+							cpttiret++;
+							}
+					}	
 				
-					System.out.print(motcache.charAt(j)+" " );
-				}
-  			}
+			}
 			
-			
+					if((cpttiret==0) && cpttrouve>=0)
+					{trouvemot=true;
 					
-					                 
-				
+					
+					}
+					else {
+						if(cpttiret>0 && cpttrouve==0)
+							{
+							trouvemot=false;
+							nbcoup--;
+							}
+							else
+							{
+								trouvemot=false;
+									}
+							
+							
+						}
+					for ( int j = 0; j <motcache.length(); j++)
+					{
 			
+					System.out.print(motcache.charAt(j)+" " );
+					}
+			//}
+		pendu(nbcoup);
+				
 	}	while(nbcoup>0 && trouvemot==false);
 			
 		
 		if( trouvemot==true)
+		
 			
-		{	System.out.println("Gagne!! en "+nbcoup);
+		{	System.out.println("Gagne!!  en "+ (6-nbcoup)+ " erreurs");
 		
 			for(i=0;i<=(motcache.length())-1;i++)
 		
@@ -198,9 +306,14 @@ return pb;
 sc.close();
 sc1.close();
 
+			
+			
+			
 		}
+	}
 		
 	
-		}
+
+	
 		
 	
