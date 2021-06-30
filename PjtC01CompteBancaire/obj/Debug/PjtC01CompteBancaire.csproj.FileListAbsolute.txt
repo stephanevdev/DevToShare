@@ -1,0 +1,7 @@
+C:\Users\Us10\source\repos\PjtC01CompteBancaiir\bin\Debug\PjtC01CompteBancaiir.exe.config
+C:\Users\Us10\source\repos\PjtC01CompteBancaiir\bin\Debug\PjtC01CompteBancaiir.exe
+C:\Users\Us10\source\repos\PjtC01CompteBancaiir\bin\Debug\PjtC01CompteBancaiir.pdb
+C:\Users\Us10\source\repos\PjtC01CompteBancaiir\obj\Debug\PjtC01CompteBancaire.csproj.AssemblyReference.cache
+C:\Users\Us10\source\repos\PjtC01CompteBancaiir\obj\Debug\PjtC01CompteBancaire.csproj.CoreCompileInputs.cache
+C:\Users\Us10\source\repos\PjtC01CompteBancaiir\obj\Debug\PjtC01CompteBancaiir.exe
+C:\Users\Us10\source\repos\PjtC01CompteBancaiir\obj\Debug\PjtC01CompteBancaiir.pdb
